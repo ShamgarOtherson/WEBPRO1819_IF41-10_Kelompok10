@@ -18,27 +18,37 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-<body class="bg">
+ <body class="bg">
 	<div class="container">
   		<div class="row">
-    		<div class="col-sm-6">
-    		<br></br>
-    		<a href="https://gab.com/popular" class="pull-left header__link"><strong>Explore</strong></a>
+    		<div class="col-sm-2">
+    		<br>
+    		<a href="<?= site_url('/welcome/loadexplore')?>" class="pull-left header__link text-secondary"><strong>Explore</strong></a>
     		</div>
     		<div class="col-sm row justify-content-end">
     		<br></br>
-      			<form class="form-inline">
-  					<div class="form-group mx-sm-1 mb-1">
+      			<form class="form-inline py-3">
+  					<div class="form-group mx-sm-2 mb-0">
     					<label for="username" class="sr-only">Username</label>
     					<input type="text" class="form-control" id="username" placeholder="Username">
   					</div>
-  					<div class="form-group mx-sm-1 mb-1">
-    					<label for="inputPassword2" class="sr-only">Password</label>
-    					<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-    					<a class ="ml-2" href="https://gab.com/password/email">Forgotten?</a>
+  					<div class="form-group mx-sm-2 mb-0">
+    					<label for="password" class="sr-only">Password</label>
+    					<input type="password" class="form-control" id="password" placeholder="Password">
   					</div>
-  					<br></br>
-  					<button type="submit" class="btn btn-primary mx-sm-2 mb-2">Login</button>
+				</form>
+				<form class="form-inline" action="<?= site_url('/welcome/loadexplore')?>" method="post">
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary mx-sm-2 mb-1">Login</button>	   
+					</div>
+					<div>
+						<a class ="ml-2" href="#">Forgotten?</a>
+					</div>
+				</form>
+				<form>
+					<div>
+						
+					</div>
 				</form>
     		</div>
   		</div>
@@ -62,8 +72,8 @@
   	  						<h4>Join GAB</h4>
   	  					</div>
   						<div class="col-sm-8 form-group mx-sm-3 mb-2 row justify-content-end">
-    						<label for="register" class="sr-only">Email</label>
-    						<input type="text" class="form-control" id="register" placeholder="Email">
+    						<label for="email" class="sr-only">Email</label>
+    						<input type="text" class="form-control" id="email" placeholder="Email">
   						</div>
   						<button type="submit" class="btn btn-primary mb-2 row justify-content-end">Create Account</button>
 					</form>
@@ -78,13 +88,13 @@
       			2019 Gab AI Inc. All Rights Reserved.
     		</div>
     		<div class="clearfix">
-      				<a href="https://help.gab.com">Help</a>
-					<a href="https://gab.com/about/investors">Investors</a>
-					<a href="https://gab.com/about/privacy">Privacy</a>
-					<a href="https://developers.gab.com">Developers</a>
+      				<a href="#">Help</a>
+					<a href="#">Investors</a>
+					<a href="#">Privacy</a>
+					<a href="#">Developers</a>
 					<br class="visible-xs">
-					<a href="/cdn-cgi/l/email-protection#f784828787988583b7909695d9969e">Press</a>
-					<a href="https://gab.com/about/tos">Terms of Service</a>
+					<a href="#">Press</a>
+					<a href="#">Terms of Service</a>
     		</div>
   		</div>
 	</div> 

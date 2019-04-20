@@ -17,51 +17,86 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-  <body class="landing-container landing-container--bg-1">
-    <div id="app">
-      <div class="header">
-        <div class="container">
-          <form method="post" class="pull-right header__login hidden visible-sm visible-xs " action="https://gab.com/auth/login">
-            <a href="https://gab.com/auth/login" class="button">Login</a>
-          </form>
-          <form method="post" class="pull-right header__login hidden-xs hidden-sm " action="https://gab.com/auth/login">
-            <input type="hidden" name="_token" value="KFTj8jb64lnPFx1vxAv08yToJ9jk2lsE7izmdsBv">
-              <div class="header__login__input pull-left">
-                <input type="text" name="username" placeholder="Username">
-                <i class="far fa-user"></i>
-              </div>
-              <div class="header__login__input pull-left">
-                <input type="password" name="password" placeholder="Password">
-                <i class="fa fa-key"></i>
-                <div class="header__login__input__link"><a href="https://gab.com/password/email">Forgotten?</a></div>
-              </div>
-              <input type="hidden" name="remember" value="on">
-              <button type="submit">Login</button>
-          </form>
-          <a href="https://gab.com/popular" class="pull-left header__link">Explore</a>
+<body class="bg">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+        <br></br>
+        <a href="<?= site_url('/welcome/loadexplore')?>" class="pull-left header__link"><strong>Explore</strong></a>
         </div>
-      </div> 
-      <div class="container">
-        <div class="auth__content">
-          <register :email="&quot;baccong046604@gmail.com&quot;"></register>
+        <div class="col-sm row justify-content-end">
+        <br></br>
+            <form class="form-inline">
+            <div class="form-group mx-sm-1 mb-1">
+              <label for="username" class="sr-only">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group mx-sm-1 mb-1">
+              <label for="password" class="sr-only">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+              <a class ="ml-2" href="#">Forgotten?</a>
+            </div>
+            <br></br>
+            <button type="submit" class="btn btn-primary mx-sm-2 mb-2">Login</button>
+        </form>
         </div>
       </div>
-      <div class="footer">
-        <div class="container">
-          <div class="clearfix">
-            <div class="footer__links">
-              <a href="https://help.gab.com">Help</a>
-              <a href="https://gab.com/about/investors">Investors</a>
-              <a href="https://gab.com/about/privacy">Privacy</a>
-              <a href="https://developers.gab.com">Developers</a>
-              <br class="visible-xs">
-              <a href="/cdn-cgi/l/email-protection#25565055554a5751654244470b444c">Press</a>
-              <a href="https://gab.com/about/tos">Terms of Service</a>
-            </div>
-            <div class="footer__copyright">2019 Gab AI Inc. All Rights Reserved.</div>
+  </div>
+  <br></br>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-sm row justify-content-center">
+        <br>
+        <h4>JOIN GAB</h4>
+        <br>
+      </div>
+      <div class="col-sm row justify-content-center">
+        <p class="clearfix">Gab defends individual liberty, free expression, and the free flow of information. All are welcome to join and speak freely.</p>
+      </div>
+      <div class="col-sm row justify-content-center">
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control" id="name" size="50">
           </div>
-        </div>
-      </div> 
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" size="50">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="Email" class="form-control" id="email" size="50">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check">
+            <label class="form-check-label" for="check">I'm not a robot</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Account</button>
+        </form>
+      </div>
     </div>
+  </div>
 </body>
 </html>
+<style type="text/css">
+  body, html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("https://gab.com/assets/landing/img/bg-1.svg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
