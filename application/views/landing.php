@@ -37,7 +37,7 @@
     					<input type="password" class="form-control" id="password" placeholder="Password">
   					</div>
 				</form>
-				<form class="form-inline" action="<?= site_url('/welcome/loadexplore')?>" method="post">
+				<form class="form-inline" action="<?= site_url('/welcome/loadLogEx')?>" method="post">
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary mx-sm-2 mb-1">Login</button>	   
 					</div>

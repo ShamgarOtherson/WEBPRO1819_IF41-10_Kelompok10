@@ -36,9 +36,14 @@
               <input type="password" class="form-control" id="password" placeholder="Password">
               <a class ="ml-2" href="#">Forgotten?</a>
             </div>
-            <br></br>
-            <button type="submit" class="btn btn-primary mx-sm-2 mb-2">Login</button>
         </form>
+        <form action="<?= site_url('/welcome/loadLogEx')?>" method="post">
+          <ul class="navbar-nav mr-sm-1">
+          <li class="nav-item active">
+            <button type="submit" class="btn btn-primary mx-sm-2 mb-2">Login</button>
+          </li>
+        </ul>
+      </form>
         </div>
       </div>
   </div>
