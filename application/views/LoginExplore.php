@@ -53,7 +53,29 @@
     <form action="<?= site_url('/Register/regist')?>" method="post">
       <ul class="navbar-nav mr-sm-1">
         <li class="nav-item active">
-          <button class="btn btn-outline-success my-1 mr-sm-1 text-white bg-success" type="submit"><span class="fas fa-pen text-white my-1 mr-sm-2"></span><strong>Gab</strong></button>
+          <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-success my-1 mr-sm-1 text-white bg-success" data-toggle="modal" data-target="#exampleModal"><span class="fas fa-pen text-white my-1 mr-sm-2"></span><strong>Gab</strong></button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                  <label for="exampleFormControlTextarea2"></label>
+                  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                  <div class="modal-footer">
+                    <button type="button" class="btn text-white bg-success">PUBLISH</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </li>
       </ul>
     </form>
