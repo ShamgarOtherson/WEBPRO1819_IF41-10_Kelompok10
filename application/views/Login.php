@@ -41,7 +41,7 @@
         <form>
           <div class="form-group">
             <label for="uname">Username</label>
-            <input type="text" class="form-control" id="uname" size="50">
+            <input type="text" class="form-control" id="uname" placeholder="Username" size="50">
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Password">
@@ -50,8 +50,14 @@
             <input type="checkbox" class="form-check-input" id="check">
             <label class="form-check-label" for="check">Remember Me</label>
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
         </form>
+        <form action="<?= site_url('/welcome/loadLogEx')?>" method="post">
+        	<ul class="navbar-nav mr-sm-1">
+    			<li class="nav-item active">
+    				<button class="btn btn-primary" type="submit" ><strong>Login</strong></button>
+    			</li>
+    		</ul>
+    	</form>
       </div>
     </div>
   </div>

@@ -30,4 +30,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Login');
 	}
+	public function loadLogEx()
+	{
+		$this->load->view('LoginExplore');
+	}
 }
