@@ -34,24 +34,27 @@
         <a class="nav-link" href="#"><span class="fas fa-globe-asia mr-sm-1 text-white"></span>Explore</a>
       </li>
       <div class="btn-group" role="group">
-        <button id="notif" type="button" class="btn btn-secondary dropdown-toggle bg-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-bell text-white"></span> Notifications</button>
+        <button id="notif" type="button" class="btn bg-dark text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-bell text-white"></span> Notifications</button>
         <div class="dropdown-menu" aria-labelledby="notif">
           <a class="dropdown-item" href="#">Dropdown link</a>
           <a class="dropdown-item" href="#">Dropdown link</a>
         </div>
+      </div>
     </ul>
     <form class="form-inline my-1 my-lg-0">
       <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search"><span class="fas fa-search mr-sm-2 text-white"></span>
-    </form>
-    <form action="<?= site_url('/Welcome/loadLogin')?>" method="post">
-      <ul class="navbar-nav mr-sm-1">
-        <li class="nav-item active">
-          <button class="btn btn-link fas fa-user-circle btn-lg" type="submit"></button>
-        </li>
-      </ul>
-    </form>
+    <div class="btn-group mx-4" role="group">
+        <button class="btn btn-link fas fa-user-circle btn-lg" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#"><span class="fas fa-user"></span> My Profile</a>
+          <a class="dropdown-item" href="#"><span class="fas fa-star-of-life"></span> Upgrade</a>
+          <a class="dropdown-item" href="#"><span class="fas fa-cog"></span> Setting</a>
+          <a class="dropdown-item" href="#"><span class="fas fa-moon"></span> Switch to dark mode</a>
+          <a class="dropdown-item" href="#"><span class="fas fa-power-off"></span> Logout</a>
+        </div>
+    </div>
     <form action="<?= site_url('/Register/regist')?>" method="post">
-      <ul class="navbar-nav mr-sm-1">
+      <ul class="navbar-nav mr-sm-1 mx-1">
         <li class="nav-item active">
           <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-success my-1 mr-sm-1 text-white bg-success" data-toggle="modal" data-target="#exampleModal"><span class="fas fa-pen text-white my-1 mr-sm-2"></span><strong>Gab</strong></button>
@@ -83,3 +86,4 @@
 </nav>
 </body>
 </html>
+</style>
