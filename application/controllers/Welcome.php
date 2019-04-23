@@ -34,4 +34,16 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('LoginExplore');
 	}
+	public function Loadprofile()
+	{
+		$this->load->view('Myprofile');
+	}
+	public function LoadUpgrade()
+	{
+		$this->load->view('Upgrade');
+	}
+	public function LoadSetting()
+	{
+		$this->load->view('Setting');
+	}
 }
