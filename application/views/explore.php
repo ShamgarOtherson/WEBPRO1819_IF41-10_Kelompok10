@@ -31,7 +31,7 @@
         <a class="nav-link" href="#"><span class="fas fa-home fa-fw mr-sm-1"></span>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><span class="fas fa-globe-asia mr-sm-1"></span>Explore</a>
+        <a class="nav-link" href="<?= site_url('/welcome/loadexplore')?>"><span class="fas fa-globe-asia mr-sm-1"></span>Explore</a>
       </li>
     </ul>
     <form class="form-inline my-1 my-lg-0">

@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 99">
   <a class="navbar-brand text-success" href="#"><strong>Gab</strong></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"> 
-        <a class="nav-link" href="#"><span class="fas fa-home fa-fw mr-sm-1"></span>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link bg-dark" href="#"><span class="fas fa-home fa-fw mr-sm-1"></span>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><span class="fas fa-globe-asia mr-sm-1 text-white"></span>Explore</a>
+        <a class="nav-link" href="<?= site_url('/welcome/loadLogEx')?>"><span class="fas fa-globe-asia mr-sm-1 text-white"></span>Explore</a>
       </li>
       <div class="btn-group" role="group">
         <button id="notif" type="button" class="btn bg-dark text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-bell text-white"></span> Notifications</button>
@@ -42,7 +42,7 @@
       </div>
       <div>
         <li class="nav-item active"> 
-          <a class="nav-link" href="#"><span class="fas fa-comments mr-sm-1 text-white"></span>Messages<span class="sr-only">(current)</span></a>
+          <a class="nav-link bg-dark" href="#"><span class="fas fa-comments mr-sm-1 text-white"></span>Messages<span class="sr-only">(current)</span></a>
         </li>
       </div>
     </ul>
@@ -62,7 +62,7 @@
       <ul class="navbar-nav mr-sm-1 mx-1">
         <li class="nav-item active">
           <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-success my-1 mr-sm-1 text-white bg-success" data-toggle="modal" data-target="#exampleModal"><span class="fas fa-pen text-white my-1 mr-sm-2"></span><strong>Gab</strong></button>
+        <button type="button" class="btn my-1 mr-sm-1 text-white bg-success" data-toggle="modal" data-target="#exampleModal"><span class="fas fa-pen text-white"></span><strong>Gab</strong></button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -72,7 +72,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form>  
                   <div class="form-group">
                   <label for="exampleFormControlTextarea2"></label>
                   <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
@@ -89,6 +89,99 @@
     </form>
   </div>
 </nav>
+<div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+  <button class="dropdown-btn">Dropdown 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <a href="#contact">Search</a>
+</div>
 </body>
 </html>
+<script type="text/javascript">
+  //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+<style type="text/css">
+  /* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
 </style>
