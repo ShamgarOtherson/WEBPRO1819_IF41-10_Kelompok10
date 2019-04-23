@@ -27,17 +27,27 @@
     		</div>
     		<div class="col-sm row justify-content-end">
     		<br></br>
-      			<form class="form-inline py-3" action="<?= base_url('/welcome/loadLogEx')?>" method="post">
+      			<form class="form-inline py-3">
   					<div class="form-group mx-sm-2 mb-0">
-    					<label data-success="right" data-error="wrong" for="Username" class="sr-only">Username</label>
-    					<input type="text" class="form-control" id="Username" name="Username" placeholder="Username">
+    					<label for="username" class="sr-only">Username</label>
+    					<input type="text" class="form-control" id="username" placeholder="Username">
   					</div>
   					<div class="form-group mx-sm-2 mb-0">
-    					<label data-error="wrong" data-success="right" for="Password" class="sr-only">Password</label>
-    					<input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+    					<label for="password" class="sr-only">Password</label>
+    					<input type="password" class="form-control" id="password" placeholder="Password">
   					</div>
-					<div class="form-group" >
-						<button class="btn btn-primary mx-sm-2 mb-1">Login</button>	   
+				</form>
+				<form class="form-inline" action="<?= site_url('/welcome/loadLogEx')?>" method="post">
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary mx-sm-2 mb-1">Login</button>	   
+					</div>
+					<div>
+						<a class ="ml-2" href="#">Forgotten?</a>
+					</div>
+				</form>
+				<form>
+					<div>
+						
 					</div>
 				</form>
     		</div>
@@ -57,7 +67,7 @@
 			<br>
 			<div class="panel panel-default">
   				<div class="panel-body">
-  	  				<form class="form-inline" action="<?= site_url('/Register/regist')?>" method="post">
+  	  				<form class="form-inline" action="<?= site_url('/Register/index')?>" method="post">
   	  					<div class="col-sm-2 row justify-content-end">
   	  						<h4>Join GAB</h4>
   	  					</div>

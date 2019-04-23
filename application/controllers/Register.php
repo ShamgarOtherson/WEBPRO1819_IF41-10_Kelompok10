@@ -22,32 +22,4 @@ class Register extends CI_Controller {
 	{
 		$this->load->view('registero');
 	}
-		public function regist()
-	{
-				//validation form
-		$this->form_validation->set_rules('name','Fullname','required|trim|is_unique[user.username]');
-		$this->form_validation->set_rules('uname','Username','required|trim|valid_email|is_unique[user.email]');
-		$this->form_validation->set_rules('email','Email','required|trim|matches[password-re]');
-		$this->form_validation->set_rules('password','Password','required|trim|matches[password]');
-		$title = $this->input->post('register');
-		if($this->form_validation->run()== false){
-			$this->load->view('header1');
-			$this->load->view('registrationView');
-			//$this->load->view('footer');
-		}
-		else {
-		//insert data to array
-			$data = [
-				'username' => $this->input->post('username'),
-				'nama' => $this->input->post('fullname'),
-				'email' => $this->input->post('email'),
-				'password' => $this->input->post('password'),
-				'alamat' => '',
-				'noHp' => ''
-							
-			];
-
-		$this->load->view('registero', array('title' => $title));
-	}
-		
-}
+}?>

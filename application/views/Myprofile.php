@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: 99">
   <a class=" text-success" href="#"><strong>Gab</strong></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
         <a class="nav-link" href="#"><span class="fas fa-home fa-fw mr-sm-1"></span>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('/welcome/loadLogEx')?>"><span class="fas fa-globe-asia mr-sm-1 text-white"></span>Explore</a>
+        <a class="nav-link" href="#"><span class="fas fa-globe-asia mr-sm-1 text-white"></span>Explore</a>
       </li>
       <div class="btn-group" role="group">
         <button id="notif" type="button" class="btn bg-dark text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-bell text-white"></span> Notifications</button>
@@ -89,7 +89,7 @@
     </form>
   </div>
 </nav>
-  <div class="wrapper">
+<div class="wrapper">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -129,9 +129,24 @@
       </div>
     </div>
   </div>
-</body>
-</html>
-<style type="text/css">
+  <script type="text/javascript">
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+  </script>
+
+  <style type="text/css">
   body{
     background:#e9eaed;
   }
@@ -293,3 +308,5 @@ display: inline-block;
   }
   }
 </style>
+</body>
+</html>
