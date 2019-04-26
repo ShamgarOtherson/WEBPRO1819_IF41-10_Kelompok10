@@ -17,7 +17,17 @@ class Welcome extends CI_Controller {
 	}
 	public function loadLogEx()
 	{
-		$this->load->view('LoginExplore');
+		$data = $this->Model_tubes->login();
+		if ($data != null){
+			$this->session->set_userdata($data);
+			$this->load->view('LoginExplore');
+		}else{
+			$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    		$password = $this->input->post('password');
+    		echo $username." ".$password;
+			echo "Error";
+		}
+		
 	}
 	public function Loadprofile()
 	{
