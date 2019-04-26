@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,7 @@
     		</div>
     		<div class="col-sm row justify-content-end">
     		<br></br>
-      			<form class="form-inline py-3">
+      			<form class="form-inline py-3" action="<?= site_url('/welcome/loadLogEx')?>" method="post">
   					<div class="form-group mx-sm-2 mb-0">
     					<label for="username" class="sr-only">Username</label>
     					<input type="text" class="form-control" id="username" placeholder="Username">
@@ -36,9 +35,7 @@
     					<label for="password" class="sr-only">Password</label>
     					<input type="password" class="form-control" id="password" placeholder="Password">
   					</div>
-				</form>
-				<form class="form-inline" action="<?= site_url('/welcome/loadLogEx')?>" method="post">
-					<div class="form-group">
+					<div class="form-group form-inline">
 						<button type="submit" class="btn btn-primary mx-sm-2 mb-1">Login</button>	   
 					</div>
 					<div>
